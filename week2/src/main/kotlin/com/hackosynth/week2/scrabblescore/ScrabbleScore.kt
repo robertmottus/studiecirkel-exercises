@@ -2,6 +2,7 @@ package com.hackosynth.week2.scrabblescore
 
 object ScrabbleScore {
 
+    fun scoreWord(word: String): Int =
      word.toUpperCase().fold(0, {acc,ch -> acc+ when {
          "AEIOULNRST".contains(ch) -> 1
          "DG".contains(ch) -> 2
