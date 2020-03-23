@@ -7,21 +7,21 @@ object Bob {
      * @return bob's response to the spoken sentence
      */
     fun hey(input: String): String {
-        val trimmedInput = input.trim()
-        val yelling = isStrictUpperCase(trimmedInput)
-        val asking = trimmedInput.endsWith("?")
-        val silent = trimmedInput.isEmpty()
+        return with(input.trim()) {
+            val yelling = isStrictUpperCase2
+            val asking = endsWith("?")
+            val silent = isEmpty()
 
-        return when {
-            silent -> "Fine. Be that way!"
-            asking && yelling -> "Calm down, I know what I'm doing!"
-            asking -> "Sure."
-            yelling -> "Whoa, chill out!"
-            else -> "Whatever."
+            when {
+                silent -> "Fine. Be that way!"
+                asking && yelling -> "Calm down, I know what I'm doing!"
+                asking -> "Sure."
+                yelling -> "Whoa, chill out!"
+                else -> "Whatever."
+            }
         }
     }
 
-    fun isStrictUpperCase(str: String) : Boolean =
-        str.toUpperCase() == str &&
-                str.toLowerCase() != str
+    private val String.isStrictUpperCase2: Boolean
+        get() = this.toUpperCase() == this && this.toLowerCase() != this
 }

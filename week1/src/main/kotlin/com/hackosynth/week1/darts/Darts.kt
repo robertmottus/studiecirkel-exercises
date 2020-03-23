@@ -1,5 +1,7 @@
 package com.hackosynth.week1.darts
 
+import java.lang.Math.sqrt
+
 object Darts {
     /**
      * Given the x and y coordinates returns the score a dart landing there would yield

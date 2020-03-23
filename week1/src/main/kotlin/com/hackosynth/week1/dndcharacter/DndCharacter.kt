@@ -1,5 +1,7 @@
 package com.hackosynth.week1.dndcharacter
 
+import kotlin.math.floor
+
 class DndCharacter {
     val strength: Int = generateAbilityScore()
     val dexterity: Int = generateAbilityScore()
